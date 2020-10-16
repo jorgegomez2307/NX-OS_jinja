@@ -1,0 +1,13 @@
+---
+# tasks file for access
+
+  - name: Generate NX Acess Config
+    template: src=access.j2 dest=roles/access/files/{{inventory_hostname}}.cfg
+    tags:
+    - template
+    - access
+
+  - name: Push Leaf Config
+    nxos_config:
+      src: roles/access/files/{{inventory_hostname}}.cfg
+      provider: "{{ nxos_provider }}"

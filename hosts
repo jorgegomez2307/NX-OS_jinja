@@ -1,0 +1,12 @@
+[all:vars]
+user=admin
+pwd=cisco!123
+ansible_python_interpreter="/usr/bin/env python"
+
+[distribution]
+distribution-1
+distribution-2
+
+[access]
+access-1
+access-2

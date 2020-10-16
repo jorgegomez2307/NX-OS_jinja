@@ -1,0 +1,13 @@
+---
+# tasks file for distribution
+
+  - name: Generate NX Distribution Config
+    template: src=distribution.j2 dest=roles/distribution/files/{{inventory_hostname}}.cfg
+    tags:
+    - template
+
+  - name: Push Leaf Config
+    nxos_config:
+      src: roles/distribution/files/{{inventory_hostname}}.cfg
+      provider: "{{ nxos_provider }}"
+    

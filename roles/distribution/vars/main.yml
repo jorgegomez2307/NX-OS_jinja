@@ -1,0 +1,7 @@
+---
+# vars file for distribution
+  nxos_provider:
+    username: "{{ user }}"
+    password: "{{ pwd }}"
+    timeout: 100
+    host: "{{ip_address}}"

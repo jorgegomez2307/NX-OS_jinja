@@ -1,0 +1,11 @@
+  - hosts: distribution
+    connection: local
+    
+    roles:
+    - distribution
+
+  - hosts: access
+    connection: local
+    
+    roles:
+    - access

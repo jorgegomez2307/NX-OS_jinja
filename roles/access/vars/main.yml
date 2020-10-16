@@ -1,0 +1,7 @@
+---
+# vars file for access
+  nxos_provider:
+    username: "{{ user }}"
+    password: "{{ pwd }}"
+    timeout: 100
+    host: "{{ip_address}}"

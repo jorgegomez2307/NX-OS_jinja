@@ -1,0 +1,25 @@
+
+# Enable Features
+feature lacp
+! 
+# Interfaces
+interface Loopback1
+    ip address  {{loopback1}}/32
+    no shutdown
+!
+!
+!
+{%for pc in port_channels %}
+    {%for member in  pc['interface_members'] %}
+
+interface Ethernet {{member['e_id']}}
+    channel-group {{pc['id']}} mode active
+    no shutdown
+    {% endfor %}
+
+
+interface port-channel {{pc['id']}}
+    switchport
+    switchport mode trunk
+!
+{% endfor %}

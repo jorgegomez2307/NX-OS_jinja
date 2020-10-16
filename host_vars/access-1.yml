@@ -1,0 +1,10 @@
+---
+  hostname: F241.01.22-N9K-C9336C-FX2-2
+  loopback1: 192.168.11.11
+  router_id: 192.168.11.11
+  ip_address: 10.82.138.235
+  port_channels:
+    - id: 1
+      interface_members:
+        - e_id: 1/1
+        - e_id: 1/3
